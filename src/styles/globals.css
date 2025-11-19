@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #08152C;
+  --foreground: #FFFFFF;
+  --card: #0E1C33;
+  --card-foreground: #FFFFFF;
+  --popover: #0E1C33;
+  --popover-foreground: #FFFFFF;
+  --primary: #E9B44C;
+  --primary-foreground: #091A2F;
+  --secondary: #10284A;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1a2a48;
+  --muted-foreground: #AAB3C1;
+  --accent: #E9B44C;
+  --accent-foreground: #091A2F;
+  --destructive: #E63946;
+  --destructive-foreground: #FFFFFF;
+  --success: #27AE60;
+  --success-foreground: #FFFFFF;
+  --warning: #F4A261;
+  --warning-foreground: #091A2F;
+  --info: #0077B6;
+  --info-foreground: #FFFFFF;
+  --border: rgba(233, 180, 76, 0.15);
+  --input: rgba(233, 180, 76, 0.2);
+  --input-background: #0E1C33;
+  --switch-background: #1a2a48;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #E9B44C;
+  --chart-1: #E9B44C;
+  --chart-2: #27AE60;
+  --chart-3: #E63946;
+  --chart-4: #0077B6;
+  --chart-5: #F4A261;
+  --radius: 18px;
+  --sidebar: #091A2F;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #E9B44C;
+  --sidebar-primary-foreground: #091A2F;
+  --sidebar-accent: #10284A;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: rgba(233, 180, 76, 0.15);
+  --sidebar-ring: #E9B44C;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', 'Inter', sans-serif;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #091A2F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E9B44C;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a03d;
+}
+
+/* Gradient background animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #10284A, #0B1B36, #091A2F);
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(233, 180, 76, 0.2);
+}
+
+/* Button glow effects */
+.btn-glow {
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(233, 180, 76, 0.4);
+}
+
+.btn-success-glow:hover {
+  box-shadow: 0 0 20px rgba(39, 174, 96, 0.4);
+}
+
+.btn-danger-glow:hover {
+  box-shadow: 0 0 20px rgba(230, 57, 70, 0.4);
+}
+
+/* Sidebar active glow */
+.sidebar-active {
+  position: relative;
+  background: linear-gradient(90deg, rgba(233, 180, 76, 0.2), transparent);
+  border-left: 3px solid #E9B44C;
+  box-shadow: 0 0 15px rgba(233, 180, 76, 0.3);
+}
+
+.sidebar-hover:hover {
+  background: rgba(233, 180, 76, 0.1);
+  border-left: 3px solid #E9B44C;
+}
+
+/* Pulse animation for important actions */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(233, 180, 76, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(233, 180, 76, 0.8);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Focus ring for accessibility */
+*:focus-visible {
+  outline: 2px solid #E9B44C;
+  outline-offset: 2px;
+}
+
+/* Floating navbar effect */
+.floating-navbar {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  background: rgba(14, 28, 51, 0.95);
+}
+
+/* Chart animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(233, 180, 76, 0.1), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
